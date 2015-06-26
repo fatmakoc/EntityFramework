@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AracTeknikServisModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="AracTeknikServisModelStoreContainer">
+          <EntitySet Name="Arac" EntityType="AracTeknikServisModel.Store.Arac" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Arac">
+          <Key>
+            <PropertyRef Name="Plaka" />
+          </Key>
+          <Property Name="AracSahibiID" Type="int" Nullable="false" />
+          <Property Name="Plaka" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="ModelNo" Type="int" Nullable="false" />
+          <Property Name="Renk" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="active" Type="bit" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AracTeknikServisModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AracTeknikServisEntities1" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Aracs" EntityType="AracTeknikServisModel.Arac" />
+        </EntityContainer>
+        <EntityType Name="Arac">
+          <Key>
+            <PropertyRef Name="Plaka" />
+          </Key>
+          <Property Name="AracSahibiID" Type="Int32" Nullable="false" />
+          <Property Name="Plaka" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="ModelNo" Type="Int32" Nullable="false" />
+          <Property Name="Renk" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="active" Type="Boolean" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AracTeknikServisModelStoreContainer" CdmEntityContainer="AracTeknikServisEntities1">
+          <EntitySetMapping Name="Aracs">
+            <EntityTypeMapping TypeName="AracTeknikServisModel.Arac">
+              <MappingFragment StoreEntitySet="Arac">
+                <ScalarProperty Name="AracSahibiID" ColumnName="AracSahibiID" />
+                <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+                <ScalarProperty Name="ModelNo" ColumnName="ModelNo" />
+                <ScalarProperty Name="Renk" ColumnName="Renk" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
